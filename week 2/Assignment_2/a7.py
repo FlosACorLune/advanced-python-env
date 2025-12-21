@@ -1,6 +1,6 @@
-test = "apple banana apple orange banana apple milk milk milk milk"
+test = "apple apple apple banana apple orange banana apple milk milk milk milk"
 li = test.split(" ")
-d = {}
+d = dict()
 
 for prd in li:
     if prd in d:
@@ -8,6 +8,7 @@ for prd in li:
     else:
         d[prd] = 1
 
-print(d.items())
-this = {123,123,123,"124"}
-#print(sorted(d.items()))
+new_d = dict(sorted(d.items(), key=lambda item: item[1], reverse=True))
+
+for i,k in new_d.items():
+    print(i,k)
